@@ -7,15 +7,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FunRestController {
 
-    @Value("${coach.name}")
-    private String coachName;
-
-    @Value("${team.name}")
-    private String teamName;
-
     // expose "/" that return "Hello World"
     @GetMapping("/")
     public String sayHello() {
         return "Hello World!";
     }
+
+    // expose a new endopoint for "workout"
+    @GetMapping("/workout")
+    public String getDailyWorkout() {
+        return "Run a hard 5k!";
+    }
+
+    // expose a new endopoint for "fortune"
+    @GetMapping("/fortune")
+    public String getDailyFortune() {
+        return "Today is your lucky day.";
+    }
+
 }
